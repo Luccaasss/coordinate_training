@@ -3,8 +3,8 @@ const chessBoard = document.querySelector("#chess-board");
 const playGame = document.querySelector("#play-game")
 const count = document.querySelector("#count-wrong");
 
-const rightMoveSound = new Audio('rightmove.mp3');
-const wrongMoveSound = new Audio('wrong-move.mp3')
+const rightMoveSound = new Audio('./sound/right_move_sound.mp3');
+const wrongMoveSound = new Audio('./sound/wrong_move_sound.mp3')
 
 playGame.addEventListener('click', startGame)
 
