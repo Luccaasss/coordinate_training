@@ -4,7 +4,7 @@ const playGame = document.querySelector("#play-game")
 const count = document.querySelector("#count-wrong");
 
 const rightMoveSound = new Audio('./sound/right_move_sound.mp3');
-const wrongMoveSound = new Audio('./sound/wrong_move_sound.mp3')
+const wrongMoveSound = new Audio('./sound/wrong_move_sound.mp3');
 
 playGame.addEventListener('click', startGame)
 
@@ -17,10 +17,10 @@ function changeCordenates(event){
     const ress = Array.from(event.target.classList)
 
     if (ress.includes(classMap.get(displayCordanates.innerHTML))){
-        count.innerText += '🟢';
+        count.appendChild(rightMoveImg())
         rightMoveSound.play();
     } else {
-        count.innerText += '🔴';
+        count.appendChild(wrongMoveImg())
         wrongMoveSound.play();
     }
 
@@ -35,4 +35,16 @@ function randomCordenates() {
 function startGame() {
     displayCordanates.innerText = randomCordenates();
     chessBoard.addEventListener('click', changeCordenates)
+}
+
+function rightMoveImg() {
+    const img = document.createElement('img');
+    img.src = './img/right_move_img.png';
+    return img;
+}
+
+function wrongMoveImg() {
+    const img = document.createElement('img');
+    img.src = './img/wrong_move_img.png';
+    return img;
 }
