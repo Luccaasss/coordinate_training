@@ -43,6 +43,8 @@ function rightMoveImg() {
     return img;
 }
 
+//test commit
+
 function wrongMoveImg() {
     const img = document.createElement('img');
     img.src = './img/wrong_move_img.png';
