@@ -13,6 +13,7 @@ h1 {
 }
 
 .display-cordenates {
+    pointer-events: none;
     font-family: sans-serif;
     text-align: center;
     color: black;
